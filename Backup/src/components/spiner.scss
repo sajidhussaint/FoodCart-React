@@ -1,0 +1,180 @@
+.spinner {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    animation: spin 1.5s infinite linear;
+  }
+  
+  .loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    animation: spin-adjust 9.2s infinite linear;  
+    /*
+      Duration of spin-adjust animation should be 4 times of the duration of spin-tail & spin-head 
+    */
+  }
+  
+  .loader::after,
+  .loader::before{
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    content: '';
+    width: inherit;
+    height: inherit;
+    border: 2px solid #ae56ce;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  
+  .loader::before,
+  .loader::after {
+    display: inline-block;
+    border-color: transparent;
+    border-top-color: #ae56ce;
+  }
+  
+  .loader::before{
+    border-width: 2px;
+    border-right-color: #ae56ce;
+    border-bottom-color: #ae56ce;
+    animation: spin-tail 2.3s infinite linear, spin-tail-color 2.3s infinite linear;
+  }
+  
+  .loader::after{
+    border-width: 10px;
+    border-top-color: white;
+    /*
+      Border color of loader::after element should be equal to your site's background color. Basically this source is not able to be used in transparent background elements or multi-colored background elements.
+      
+      If you need to use this spinner in such projects, you better find other sources or rework this pen to build your own loader component.
+    
+      If you want to change the background color of this element, you should change all border colors in @keyframes spin-head too.
+    */
+    transform: scale(1.2) rotate(15deg);
+    animation: spin-head 2.3s infinite linear;
+  }
+  
+  @keyframes spin-tail-color{
+    0% {
+      border-right-color: #ae56ce;
+      border-bottom-color: transparent;
+    }
+    25%{
+      border-right-color: #ae56ce;
+      border-bottom-color: transparent;
+    }
+    25.1% {
+      border-right-color: #ae56ce;
+      border-bottom-color: #ae56ce;
+    }
+    74.9% {
+      border-right-color: #ae56ce;
+      border-bottom-color: #ae56ce;
+    }
+    75% {
+      border-right-color: #ae56ce;
+      border-bottom-color: transparent;
+    }
+    100% {
+      border-right-color: #ae56ce;
+      border-bottom-color: transparent;
+    }
+  }
+  
+  @keyframes spin-head{
+    0% {
+      border-right-color: white;
+      border-bottom-color: white;
+    }
+    13.9% {
+      border-right-color: white;
+      border-bottom-color: white;
+    }
+    14% {
+      border-right-color: white;
+      border-bottom-color: transparent
+    }
+    32.33% {
+      border-right-color: white;
+      border-bottom-color: transparent
+    }
+    32.34% {
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+    67.66% {
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+    67.67% {
+      border-right-color: white;
+      border-bottom-color: transparent
+    }
+    86.9% {
+      border-right-color: white;
+      border-bottom-color: transparent
+    }
+    87% {
+      border-right-color: white;
+      border-bottom-color: white;
+    }
+    100% {
+      border-right-color: white;
+      border-bottom-color: white;
+    }
+  }
+  
+  
+  @keyframes spin-adjust {
+    0% {
+      transform: rotate(0deg);
+    }
+    12.5% {
+      transform: rotate(270deg);
+    }
+    25% {
+      transform: rotate(270deg);
+    }
+    37.5% {
+      transform: rotate(540deg);
+    }
+    50% {
+      transform: rotate(540deg);
+    }
+    62.5% {
+      transform: rotate(810deg);
+    }
+    75% {
+      transform: rotate(810deg);
+    }
+    87.5%{
+      transform: rotate(1080deg);
+    }
+    100% {
+      transform: rotate(1080deg);
+    }
+  }
+  
+  
+  @keyframes spin-tail {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-255deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

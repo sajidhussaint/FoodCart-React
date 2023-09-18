@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Slabo+27px&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Concert One", cursive;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: rgb(225, 243, 245);
+}
+li{
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+  &.flex-center {
+    align-items: center;
+    justify-content: center;
+  }
+}
+//external css
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+}
+.gap {
+  gap: 25px;
+}
+.br {
+  border-radius: 10px;
+}
+//css global
+h1 {
+  margin-bottom: 37px;
+  font-size: 73px;
+  text-shadow: 2px 2px 4px #ee9b02;
+  line-height: 70px;
+}
+p {
+  font-family: "Slabo 27px", serif;
+  font-size: 16px;
+  line-height: 30px;
+  color: #171818;
+  text-shadow: 2px 2px 4px #94643e;
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+//hero css
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: white;
+
+  img {
+    width: 100%;
+    height: 100vh;
+    filter: saturate(175%);
+    object-fit: cover;
+  }
+
+  &-content {
+    max-width: 590px;
+    position: absolute;
+    left: 80px;
+    top: 27%;
+    transform: translateY(-50%);
+
+    p {
+      font-family: "Slabo 27px", serif;
+      font-size: 16px;
+      line-height: 30px;
+      color: #fdffff;
+      text-shadow: 2px 2px 4px #94643e;
+    }
+  }
+}
+
+//special dishes
+
+.special-dishes {
+  &-content {
+    max-width: 650px;
+    margin: auto;
+    margin-top: 75px;
+  }
+  h2 {
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px #94643e;
+    letter-spacing: 2px;
+  }
+  img {
+    width: 186px;
+    overflow: hidden;
+    transition: transform 0.5s linear;
+  }
+  img:hover {
+    transform: scale(1.07);
+    filter: saturate(125%);
+  }
+  &-list {
+    margin-top: 75px;
+    li {
+      width: 22%;
+    }
+  }
+}
+
+//filtred dishes
+.filtred-dishes {
+  margin-top: 75px;
+  h2 {
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px #94643e;
+    letter-spacing: 2px;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+  ul {
+    justify-content: space-evenly;
+  }
+  li {
+    background-color: #f74d1c;
+    height: 24px;
+    width: 110px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    border-radius: 40px;
+    box-shadow: 5px 5px 5px #000000;
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: black;
+  }
+}
+//category list
+.catlist {
+  
+  padding-top: 75px;
+  margin-bottom: 75px;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  display: flex;
+  padding-left: 300px;
+  padding-right: 300px;
+  li {
+    display: inline-block;
+    text-align: center;
+    max-width: 218px;
+  }
+  ul {
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+  img {
+    width: 150px;
+    overflow: hidden;
+    transition: transform 0.5s linear;
+    border-radius: 20px;
+    border: 1px solid  grey;
+  }
+  img:hover {
+    transform: scale(1.07);
+    filter: saturate(125%);
+  }
+}
+//spinner
+.loaders {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: white;
+    margin-right: 20px;
+  }
+}
+.active{
+  background-color: black !important;
+}
+//hidden no items found 
+.hidden{
+  display: none !important;
+}
+.access{
+  display:block;
+}
+
+// Alert
+#alert {
+  border: 2px solid #333232;
+  border-radius: 10px;
+  height: 20vh;
+  width: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  h3 {
+    color: rgb(155, 2, 2);
+    margin: 0 0 10px 0;
+  }
+  
+  h4{
+    margin: 0;
+  }
+}
+//pagination
+.pagination {
+  justify-content: center;
+  margin: 50px 0 0;
+  display: flex;
+
+  li {
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    transition: all ease 0.3s;
+
+    &:hover {
+      background-color: #f74d1c;
+      border-color: #f74d1c;
+    }
+  }
+}
+
